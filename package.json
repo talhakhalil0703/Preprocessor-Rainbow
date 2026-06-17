@@ -93,12 +93,14 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "package": "node --require ./scripts/polyfill-file.js ./node_modules/@vscode/vsce/vsce package"
+    "package": "node --require ./scripts/polyfill-file.js ./node_modules/@vscode/vsce/vsce package",
+    "ovsx": "node --require ./scripts/polyfill-file.js ./node_modules/ovsx/lib/ovsx"
   },
   "devDependencies": {
     "@types/node": "^18.19.0",
     "@types/vscode": "^1.75.0",
     "@vscode/vsce": "^2.22.0",
+    "ovsx": "^0.8.3",
     "typescript": "^5.4.0"
   }
 }
