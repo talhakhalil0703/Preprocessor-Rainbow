@@ -94,7 +94,8 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "package": "node --require ./scripts/polyfill-file.js ./node_modules/@vscode/vsce/vsce package",
-    "ovsx": "node --require ./scripts/polyfill-file.js ./node_modules/ovsx/lib/ovsx"
+    "ovsx": "node --require ./scripts/polyfill-file.js ./node_modules/ovsx/lib/ovsx",
+    "publish:all": "bash ./scripts/publish-all.sh"
   },
   "devDependencies": {
     "@types/node": "^18.19.0",
