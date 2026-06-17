@@ -16,6 +16,19 @@
     "Visualization",
     "Programming Languages"
   ],
+  "keywords": [
+    "c",
+    "cpp",
+    "preprocessor",
+    "#if",
+    "#ifdef",
+    "#endif",
+    "highlight",
+    "macro",
+    "nesting",
+    "rainbow"
+  ],
+  "icon": "images/icon.png",
   "main": "./out/extension.js",
   "activationEvents": [
     "onLanguage:c",
