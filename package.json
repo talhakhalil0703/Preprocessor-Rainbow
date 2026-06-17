@@ -1,0 +1,90 @@
+{
+  "name": "preprocessor-rainbow",
+  "displayName": "Preprocessor Rainbow",
+  "description": "Highlights C/C++ #if/#endif blocks with layered, translucent colors per nesting depth. Toggle from the status bar.",
+  "version": "0.1.0",
+  "publisher": "local",
+  "license": "Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talhakhalil0703/Preprocessor-Rainbow.git"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Visualization",
+    "Programming Languages"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:c",
+    "onLanguage:cpp"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "preprocessorRainbow.toggle",
+        "title": "Preprocessor Rainbow: Toggle Highlighting"
+      }
+    ],
+    "configuration": {
+      "title": "Preprocessor Rainbow",
+      "properties": {
+        "preprocessorRainbow.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable preprocessor block highlighting. Also controlled by the status bar button."
+        },
+        "preprocessorRainbow.colors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "#4477AA",
+            "#EE6677",
+            "#228833",
+            "#CCBB44",
+            "#AA3377"
+          ],
+          "description": "Hex colors to loop over per nesting depth. Defaults use the color-blind-friendly Paul Tol 'bright' palette. Each color is rendered as a translucent background, so nested blocks layer and deepen."
+        },
+        "preprocessorRainbow.alphas": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "default": [
+            0.12,
+            0.12,
+            0.12,
+            0.12,
+            0.12
+          ],
+          "description": "Per-layer alpha (0-1) applied to the matching color in 'colors'. If shorter than 'colors', the last value is reused for remaining layers."
+        },
+        "preprocessorRainbow.maxDepth": {
+          "type": "number",
+          "default": 24,
+          "minimum": 1,
+          "description": "Safety cap on nesting depth processed per file."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "node --require ./scripts/polyfill-file.js ./node_modules/@vscode/vsce/vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "@types/vscode": "^1.75.0",
+    "@vscode/vsce": "^2.22.0",
+    "typescript": "^5.4.0"
+  }
+}
