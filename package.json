@@ -3,7 +3,7 @@
   "displayName": "Preprocessor Rainbow",
   "description": "Highlights C/C++ #if/#endif blocks with layered, translucent colors per nesting depth. Toggle from the status bar.",
   "version": "0.1.0",
-  "publisher": "local",
+  "publisher": "TalhaKhalil",
   "license": "Unlicense",
   "repository": {
     "type": "git",
